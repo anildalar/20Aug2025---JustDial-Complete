@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_details",
+  "info": {
+    "singularName": "business-detail",
+    "pluralName": "business-details",
+    "displayName": "BusinessDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "cities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::city.city",
+      "inversedBy": "business_details"
+    },
+    "business_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::business-category.business-category",
+      "mappedBy": "business_details"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::review.review",
+      "mappedBy": "business_details"
+    }
+  }
+}

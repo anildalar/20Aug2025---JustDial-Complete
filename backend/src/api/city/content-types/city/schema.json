@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cities",
+  "info": {
+    "singularName": "city",
+    "pluralName": "cities",
+    "displayName": "City"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "states": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::state.state",
+      "inversedBy": "cities"
+    },
+    "business_details": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::business-detail.business-detail",
+      "mappedBy": "cities"
+    }
+  }
+}
